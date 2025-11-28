@@ -1,21 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#e63946" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#DA4130" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
   <!-- Collar -->
-  <path d="M32 15 L50 28 L68 15" />
+  <path d="M32 20 L50 34 L68 20" />
+  <path d="M32 20 L44 32" />
+  <path d="M68 20 L56 32" />
   
-  <!-- Shoulders to Sleeves -->
-  <path d="M32 15 L15 30 L8 45 L22 52 L28 42" />
-  <path d="M68 15 L85 30 L92 45 L78 52 L72 42" />
+  <!-- Left Sleeve -->
+  <path d="M32 20 L18 36 L26 44 L32 38" />
+  
+  <!-- Right Sleeve -->
+  <path d="M68 20 L82 36 L74 44 L68 38" />
   
   <!-- Body -->
-  <path d="M28 42 L28 85 C35 88 65 88 72 85 L72 42" />
+  <path d="M32 38 L30 80 C40 84 60 84 70 80 L68 38" />
+
+  <!-- Placket -->
+  <path d="M50 34 L50 54" />
   
-  <!-- Placket & Buttons -->
-  <path d="M50 28 L50 55" />
-  <circle cx="50" cy="38" r="2.5" fill="#e63946" stroke="none"/>
-  <circle cx="50" cy="48" r="2.5" fill="#e63946" stroke="none"/>
+  <!-- Buttons (Solid) -->
+  <circle cx="50" cy="41" r="2.5" fill="#DA4130" stroke="none" />
+  <circle cx="50" cy="49" r="2.5" fill="#DA4130" stroke="none" />
   
-  <!-- Sketchy/Neobrutalist texture lines -->
-  <path d="M35 60 L42 62" opacity="0.5" />
-  <path d="M65 60 L58 62" opacity="0.5" />
-  <path d="M30 80 L70 80" stroke-width="2" opacity="0.3" />
+  <!-- Texture Lines (Diagonal Swishes) -->
+  <path d="M38 52 Q 48 56 56 48" />
+  <path d="M36 62 Q 46 66 54 58" />
+  <path d="M38 70 Q 44 72 48 68" />
 </svg>
