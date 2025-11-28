@@ -1,54 +1,51 @@
-# Prawn Projects
+# The Prawn Projects
 
-A high-contrast, self-updating portfolio styled in a raw Neobrutalist aesthetic. This application automatically connects to the Vercel API to fetch and display your latest deployed projects, ensuring your portfolio is always in sync with your work.
+A high-contrast, self-updating portfolio styled in a raw Neobrutalist aesthetic. This application is engineered to connect directly to the Vercel REST API, automatically fetching and displaying live deployments to keep your portfolio perfectly synchronized with your development work.
 
-## Features
+## Design Philosophy
 
-- **Automated Project Fetching**: Pulls live deployment data directly from Vercel using the REST API.
-- **Neobrutalist Design**: Bold typography (Space Grotesk), high-contrast borders, hard shadows, and a stark black/white/yellow color palette.
-- **Responsive Layout**: Fluid grid system that adapts from mobile to desktop.
-- **Dynamic Updates**: Displays project names, frameworks, and direct links to live deployments.
+- **Neobrutalism**: Defined by bold typography ('Space Grotesk'), stark black/white contrast, and a signature 'neo-yellow' accent.
+- **Visuals**: High-contrast borders (3px solid black), hard unblurred shadows, and geometric interactions.
+- **Responsiveness**: A fluid, component-based grid system that scales from mobile devices to large desktop screens.
 
-## Tech Stack
+## Architecture
 
-- **React**: Component-based UI architecture.
-- **Tailwind CSS**: Utility-first styling with custom configuration for the Neobrutalist theme.
-- **Vercel API**: Data source for project metadata and deployment status.
-- **Space Grotesk**: Primary typeface.
+- **Frontend**: React (App Router architecture compatible)
+- **Styling**: Tailwind CSS with extended configuration for Neobrutalist design tokens.
+- **Data Layer**: Direct integration with Vercel API for real-time project metadata.
 
 ## Configuration
 
-To connect the application to your Vercel account, you must configure the following environment variables in your deployment settings or local environment file (`.env` or similar).
-
-### Required Environment Variables
+To enable the automatic project fetching, you must configure the following environment variables in your deployment settings.
 
 | Variable Name | Description |
-| to | to |
-| `REACT_APP_VERCEL_API_TOKEN` | Your Vercel Account API Token. Create one at [Vercel Tokens](https://vercel.com/account/tokens). |
-| `REACT_APP_TEAM_ID` | (Optional) The Team ID if your projects are located within a Vercel Team. |
+| :--- | :--- |
+| `REACT_APP_VERCEL_API_TOKEN` | Your Vercel Account API Token. Generate this in your Vercel Account Settings. |
+| `REACT_APP_TEAM_ID` | (Optional) The Team ID if your projects are hosted under a Vercel Team. |
 
-*Note: The application also checks `VERCEL_API_TOKEN` and `NEXT_PUBLIC_TEAM_ID` depending on your specific build configuration.*
+### Favicon Note
+This project uses a scalable SVG favicon (`favicon.svg`) which is supported by all modern browsers. If you require a legacy `.ico` file, you may convert the provided SVG using any standard image conversion tool.
 
-## Setup & Development
+## Setup Instructions
 
-1.  **Clone the repository**
+1.  **Clone**
     ```bash
     git clone https://github.com/your-username/prawn-projects.git
-    cd prawn-projects
     ```
 
-2.  **Install Dependencies**
+2.  **Install**
     ```bash
     npm install
     ```
 
-3.  **Run Locally**
-    Ensure you have your API tokens set in your environment.
+3.  **Run**
     ```bash
     npm start
     ```
 
-4.  **Build for Production**
-    ```bash
-    npm run build
-    ```
+4.  **Deploy**
+    Push to your preferred hosting provider. Ensure environment variables are set in the dashboard for the API connection to function.
+
+## License
+
+© 2025 紅衣 (RED SHIRT)

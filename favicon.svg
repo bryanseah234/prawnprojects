@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="#e63946" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Collar -->
+  <path d="M32 15 L50 28 L68 15" />
+  
+  <!-- Shoulders to Sleeves -->
+  <path d="M32 15 L15 30 L8 45 L22 52 L28 42" />
+  <path d="M68 15 L85 30 L92 45 L78 52 L72 42" />
+  
+  <!-- Body -->
+  <path d="M28 42 L28 85 C35 88 65 88 72 85 L72 42" />
+  
+  <!-- Placket & Buttons -->
+  <path d="M50 28 L50 55" />
+  <circle cx="50" cy="38" r="2.5" fill="#e63946" stroke="none"/>
+  <circle cx="50" cy="48" r="2.5" fill="#e63946" stroke="none"/>
+  
+  <!-- Sketchy/Neobrutalist texture lines -->
+  <path d="M35 60 L42 62" opacity="0.5" />
+  <path d="M65 60 L58 62" opacity="0.5" />
+  <path d="M30 80 L70 80" stroke-width="2" opacity="0.3" />
+</svg>

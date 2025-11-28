@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { NeoCard, NeoButton, NeoLink } from './components/NeoComponents';
 import { fetchProjects } from './services/vercelService';
 import { Project } from './types';
-import { MOCK_PROJECTS } from './constants';
 
 const App: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -13,16 +12,14 @@ const App: React.FC = () => {
     const loadProjects = async () => {
       try {
         setLoading(true);
-        // Attempt to fetch from Vercel API
-        // NOTE: In a client-side only environment, this might fail due to CORS if not proxied.
-        // We fall back to mock data for demonstration purposes if the API call fails or keys are missing.
+        // Execute server-side fetch to Vercel API
         const data = await fetchProjects();
         setProjects(data);
         setError(null);
       } catch (err) {
-        console.warn('Failed to fetch from Vercel API, loading mock data for demo.', err);
-        setProjects(MOCK_PROJECTS);
-        setError('Displaying demo mode (API connection unavailable)');
+        console.error('API Connection Failed:', err);
+        setProjects([]);
+        setError('Unable to fetch projects. Check API Token and Team ID configuration.');
       } finally {
         setLoading(false);
       }
@@ -57,7 +54,7 @@ const App: React.FC = () => {
           </h3>
           {error && (
             <span className="text-xs font-bold bg-neo-yellow border-2 border-neo-black px-2 py-1 uppercase hidden md:inline-block">
-              {error}
+              Connection Error
             </span>
           )}
         </div>
@@ -68,7 +65,7 @@ const App: React.FC = () => {
               <div key={i} className="h-64 border-3 border-neo-black animate-pulse bg-gray-100 shadow-neo"></div>
             ))}
           </div>
-        ) : (
+        ) : projects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <NeoCard key={project.id} title={project.name}>
@@ -98,6 +95,18 @@ const App: React.FC = () => {
               </NeoCard>
             ))}
           </div>
+        ) : (
+          <div className="p-12 text-center border-3 border-neo-black bg-gray-50 flex flex-col items-center justify-center gap-4">
+             <div className="w-16 h-16 border-3 border-neo-black rounded-full flex items-center justify-center font-bold text-2xl">!</div>
+             <div>
+                <p className="text-xl font-bold uppercase text-neo-black">
+                  {error ? 'API Connection Unavailable' : 'No Projects Found'}
+                </p>
+                <p className="text-sm mt-2 font-medium opacity-60 max-w-md mx-auto">
+                   {error || 'Your Vercel account appears to have no projects or the API token is missing.'}
+                </p>
+             </div>
+          </div>
         )}
       </main>
 
@@ -117,7 +126,7 @@ const App: React.FC = () => {
           </div>
           <div className="text-right">
              <p className="text-sm font-bold uppercase opacity-50">
-               © {new Date().getFullYear()} 紅衣 (RED SHIRT)
+               © 2025 紅衣 (RED SHIRT)
              </p>
           </div>
         </div>
