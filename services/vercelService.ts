@@ -46,20 +46,29 @@ export const fetchProjects = async (): Promise<Project[]> => {
 
     // Map the raw Vercel response to our simplified Project type
     return data.projects.map((p: any) => {
-      // Attempt to find the production deployment URL
       let liveUrl = null;
+
+      // Helper to find the best URL from a list of aliases
+      // We prioritize the SHORTEST alias, as this is usually the custom domain (example.com) 
+      // or the clean project URL (project.vercel.app), avoiding the long git-hash URLs.
+      const getBestAlias = (aliases: string[]) => {
+        if (!aliases || aliases.length === 0) return null;
+        return aliases.sort((a, b) => a.length - b.length)[0];
+      };
+
+      // Strategy 1: Check Production Target Aliases (Custom Domains live here)
+      const productionAlias = getBestAlias(p.targets?.production?.alias);
       
-      // Strategy 1: targets.production.url (if available)
-      if (p.targets?.production?.url) {
+      // Strategy 2: Check Latest Deployment Aliases
+      const deploymentAlias = getBestAlias(p.latestDeployments?.[0]?.alias);
+
+      if (productionAlias) {
+        liveUrl = `https://${productionAlias}`;
+      } else if (deploymentAlias) {
+        liveUrl = `https://${deploymentAlias}`;
+      } else if (p.targets?.production?.url) {
+        // Fallback to the long generated URL if no aliases exist
         liveUrl = `https://${p.targets.production.url}`;
-      } 
-      // Strategy 2: targets.production.alias (array of strings)
-      else if (p.targets?.production?.alias && p.targets.production.alias.length > 0) {
-        liveUrl = `https://${p.targets.production.alias[0]}`;
-      }
-      // Strategy 3: Check latestDeployment alias
-      else if (p.latestDeployments?.[0]?.alias?.[0]) {
-        liveUrl = `https://${p.latestDeployments[0].alias[0]}`;
       }
 
       return {

@@ -28,6 +28,16 @@ const App: React.FC = () => {
     loadProjects();
   }, []);
 
+  // Helper to clean URL for display
+  const formatUrl = (urlStr: string) => {
+    try {
+      const hostname = new URL(urlStr).hostname;
+      return hostname.replace(/^www\./, '');
+    } catch (e) {
+      return 'No Link';
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col p-4 md:p-8 max-w-7xl mx-auto gap-8 md:gap-12">
       {/* Header Section */}
@@ -86,8 +96,8 @@ const App: React.FC = () => {
                     <p className="font-bold text-sm uppercase opacity-70">
                       Framework: {project.framework || 'React'}
                     </p>
-                    <p className="text-xs uppercase break-all">
-                      {project.link ? new URL(project.link).hostname : 'No link'}
+                    <p className="text-xs uppercase truncate max-w-full font-medium tracking-tight">
+                      {project.link ? formatUrl(project.link) : ''}
                     </p>
                   </div>
                   
