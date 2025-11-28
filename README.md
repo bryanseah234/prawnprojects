@@ -1,4 +1,4 @@
-# The Prawn Projects - Automated Neobrutalist Portfolio
+# Prawn Projects
 
 A high-contrast, self-updating portfolio styled in a raw Neobrutalist aesthetic. This application automatically connects to the Vercel API to fetch and display your latest deployed projects, ensuring your portfolio is always in sync with your work.
 
@@ -52,7 +52,3 @@ To connect the application to your Vercel account, you must configure the follow
     ```bash
     npm run build
     ```
-
-## License
-
-© 2025 紅衣 (RED SHIRT)
