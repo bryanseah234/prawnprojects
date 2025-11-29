@@ -1,51 +1,78 @@
 # The Prawn Projects
 
-A high-contrast, self-updating portfolio styled in a raw Neobrutalist aesthetic. This application is engineered to connect directly to the Vercel REST API, automatically fetching and displaying live deployments to keep your portfolio perfectly synchronized with your development work.
+A self-updating Neobrutalist portfolio that automatically syncs with your Vercel deployments.
 
-## Design Philosophy
+## Description
 
-- **Neobrutalism**: Defined by bold typography ('Space Grotesk'), stark black/white contrast, and a signature 'neo-yellow' accent.
-- **Visuals**: High-contrast borders (3px solid black), hard unblurred shadows, and geometric interactions.
-- **Responsiveness**: A fluid, component-based grid system that scales from mobile devices to large desktop screens.
+The Prawn Projects is a high-contrast portfolio application styled in a raw Neobrutalist aesthetic. It connects directly to the Vercel REST API to automatically fetch and display your live deployments, keeping your portfolio perfectly synchronized with your development work. The design features bold typography, stark black/white contrast, and responsive layouts that scale from mobile to desktop.
 
-## Architecture
+## Features
 
-- **Frontend**: React (App Router architecture compatible)
-- **Styling**: Tailwind CSS with extended configuration for Neobrutalist design tokens.
-- **Data Layer**: Direct integration with Vercel API for real-time project metadata.
+- Automatic project synchronization with Vercel API
+- Neobrutalist design with bold typography (Space Grotesk) and high-contrast visuals
+- Responsive grid layout that adapts from mobile to large desktop screens
+- Real-time loading states with skeleton animations
+- Framework detection and display for each project
+- Direct links to live deployed projects
 
-## Configuration
+## Technologies Used
 
-To enable the automatic project fetching, you must configure the following environment variables in your deployment settings.
+- React 19
+- TypeScript
+- Vite (build tool)
+- Tailwind CSS
+- Vercel API integration
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/bryanseah234/prawnprojects.git
+
+# Navigate to project directory
+cd prawnprojects
+
+# Install dependencies
+npm install
+```
+
+## Usage
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+### Configuration
+
+To enable automatic project fetching, configure the following environment variables in your deployment settings:
 
 | Variable Name | Description |
 | :--- | :--- |
-| `REACT_APP_VERCEL_API_TOKEN` | Your Vercel Account API Token. Generate this in your Vercel Account Settings. |
-| `REACT_APP_TEAM_ID` | (Optional) The Team ID if your projects are hosted under a Vercel Team. |
+| `VITE_VERCEL_API_TOKEN` | Your Vercel Account API Token. Generate this in your Vercel Account Settings. |
+| `VITE_TEAM_ID` | (Optional) The Team ID if your projects are hosted under a Vercel Team. |
 
-### Favicon Note
-This project uses a scalable SVG favicon (`favicon.svg`) which is supported by all modern browsers. If you require a legacy `.ico` file, you may convert the provided SVG using any standard image conversion tool.
+The application also supports `REACT_APP_VERCEL_API_TOKEN` (Create React App), `NEXT_PUBLIC_VERCEL_API_TOKEN` (Next.js), or unprefixed `VERCEL_API_TOKEN` variables.
 
-## Setup Instructions
+## Demo
 
-1.  **Clone**
-    ```bash
-    git clone https://github.com/your-username/prawn-projects.git
-    ```
+Deploy to Vercel or any hosting provider that supports Vite applications. Ensure environment variables are configured in your deployment dashboard.
 
-2.  **Install**
-    ```bash
-    npm install
-    ```
+## Disclaimer
 
-3.  **Run**
-    ```bash
-    npm start
-    ```
-
-4.  **Deploy**
-    Push to your preferred hosting provider. Ensure environment variables are set in the dashboard for the API connection to function.
+1. FOR EDUCATIONAL PURPOSES ONLY
+2. USE AT YOUR OWN DISCRETION
 
 ## License
 
-© 2025 紅衣 (RED SHIRT)
+MIT License
+
+---
+
+**Author:** <a href="https://github.com/bryanseah234">bryanseah234</a>
