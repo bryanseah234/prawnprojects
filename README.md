@@ -69,7 +69,7 @@ Deploy to Vercel or any hosting provider that supports Vite applications. Ensure
 1. FOR EDUCATIONAL PURPOSES ONLY
 2. USE AT YOUR OWN DISCRETION
 
-## License
+---
 
 MIT License
 
