@@ -4,7 +4,7 @@ A self-updating Neobrutalist portfolio that automatically syncs with your Vercel
 
 ## Description
 
-The Prawn Projects is a high-contrast portfolio application styled in a raw Neobrutalist aesthetic. It connects directly to the Vercel REST API to automatically fetch and display your live deployments, keeping your portfolio perfectly synchronized with your development work. The design features bold typography, stark black/white contrast, and responsive layouts that scale from mobile to desktop.
+Prawn Projects is a high-contrast portfolio application styled in a raw Neobrutalist aesthetic. It connects directly to the Vercel REST API to automatically fetch and display your live deployments, keeping your portfolio perfectly synchronized with your development work. The design features bold typography, stark black/white contrast, and responsive layouts that scale from mobile to desktop.
 
 ## Features
 
