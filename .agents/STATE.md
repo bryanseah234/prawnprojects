@@ -1,62 +1,19 @@
 # STATE
 
-**Updated:** 2026-08-11 SGT
-**By:** codex / machine: desktop
-**Branch:** `wrapup/final`
-**Ended because:** waiting for cold different-CLI MOLT proof
+Updated 2026-09-10 SGT. Task: portfolio upkeep and removal of browser account access.
 
----
+## Current work
 
-## Task
-
-Prove MOLT Layer 0 still works in a real downstream repo after the SHELL/MOLT
-wrap-up work: committed `.agents/STATE.md` plus a committed handoff must give a
-fresh CLI enough context to continue without relying on local Codex memory.
-
-## Status
-
-`in-progress`
-
-## Done so far
-
-- Verified `.agents/STATE.md` is not ignored with `git check-ignore -v`.
-- Confirmed `.agents/STATE.md` and `.agents/handoffs/2026-08-09-molt-proof-seed.md`
-  are already tracked by Git.
-- Created branch `wrapup/final` from `main`.
-- Generated a new handoff:
-  `.agents/handoffs/2026-08-11-075711-molt-wrapup-proof.md`.
-- Updated this state file for a cold resume proof.
+- Isolated branch `maintenance/prawn-projects-20260910` starts from fresh `origin/main` (`2eeaa55`). Original local edits are preserved.
+- Public production baseline reproduced an authenticated browser request to Vercel's project API and only 20 rendered project links. Credential presence was recorded as a boolean; values were not captured in reports.
+- A fresh hosting inventory contains 26 deployed public projects and one undeployed project. The replacement bundles an explicit public catalog and compiles Tailwind with the existing design tokens.
+- Five catalog tests pass, covering unsafe links, private metadata, duplicate entries, alias selection and inventories larger than one API page. All 26 public links passed HTTP checks. TypeScript and the production build passed with synthetic credential markers absent from the output. Desktop/mobile checks passed for all links, keyboard navigation, Prawn styles and page width, with zero account API or runtime compiler requests.
+- The exposed credential needs revocation after checking other consumers. The replacement requires no account credential; older bundles may still contain the old one.
 
 ## Next steps
 
-1. In a different CLI, cold-start in `X:\01 REPOSITORIES\theprawnprojects`.
-2. Say only: `continue`.
-3. Verify the CLI reads this file and the new handoff before acting.
-4. It should report the current task, branch, and next safe action.
+Publish the reviewed commit, verify both public domains and record the deployment. Keep credential revocation open until verified. If a UI regression needs repair, retain the public catalog; do not restore the former browser account integration as a rollback.
 
-## Decisions made
+## Earlier handoff
 
-- Use `theprawnprojects` as the single proof repo to avoid noisy empty state
-  files across every repository.
-- Keep durable handoff state in `.agents/`, not `.claude/`, because `.claude/`
-  remains local-only and is not a cross-harness continuity layer.
-- Use `wrapup/final` for this proof to respect the no-commits-to-main rule.
-
-## Gotchas
-
-- Windows/PowerShell environment; bash is unreliable on this machine.
-- `.agents/` files are committed and may be public, so do not place secrets,
-  private credentials, or personal details here.
-- The fresh CLI may not have any local memory-tool context. Trust this file and
-  the committed handoff, then verify with Git.
-
-## Files in play
-
-- `.agents/STATE.md` - durable current snapshot for the next CLI.
-- `.agents/handoffs/2026-08-11-075711-molt-wrapup-proof.md` - detailed proof
-  handoff for the next CLI.
-- `.agents/handoffs/2026-08-09-molt-proof-seed.md` - prior proof handoff.
-
-## Open questions for the human
-
-- Which CLI will be used for the cold resume proof?
+The previous MOLT continuity proof remains documented in `handoffs/2026-08-11-075711-molt-wrapup-proof.md` and `handoffs/2026-08-09-molt-proof-seed.md`.

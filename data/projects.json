@@ -1,0 +1,161 @@
+{
+  "updatedAt": "2026-09-10T01:29:14.138Z",
+  "projects": [
+    {
+      "id": "ctfpawned",
+      "name": "ctfpawned",
+      "framework": "astro",
+      "link": "https://ctfpawned.vercel.app/"
+    },
+    {
+      "id": "dejavista",
+      "name": "dejavista",
+      "framework": "vite",
+      "link": "https://dejavista.hong-yi.me/"
+    },
+    {
+      "id": "frontend",
+      "name": "frontend",
+      "framework": "nextjs",
+      "link": "https://frontend-gilt-zeta-25.vercel.app/"
+    },
+    {
+      "id": "gmaplists",
+      "name": "gmaplists",
+      "framework": "vite",
+      "link": "https://gmaplists-one.vercel.app/"
+    },
+    {
+      "id": "pocketclawd",
+      "name": "pocketclawd",
+      "framework": null,
+      "link": "https://pocketclawd.hong-yi.me/"
+    },
+    {
+      "id": "pokemonpacks",
+      "name": "pokemonpacks",
+      "framework": "vite",
+      "link": "https://pokemonpacks.hong-yi.me/"
+    },
+    {
+      "id": "sgbuslaobu",
+      "name": "sgbuslaobu",
+      "framework": "flask",
+      "link": "https://sgbuslaobu.hong-yi.me/"
+    },
+    {
+      "id": "sgcampuscore",
+      "name": "sgcampuscore",
+      "framework": "nextjs",
+      "link": "https://sgcampuscore.hong-yi.me/"
+    },
+    {
+      "id": "sgcertwatch",
+      "name": "sgcertwatch",
+      "framework": null,
+      "link": "https://sgcertwatch.hong-yi.me/"
+    },
+    {
+      "id": "sgshiok",
+      "name": "sgshiok",
+      "framework": "nextjs",
+      "link": "https://sgshiok.hong-yi.me/"
+    },
+    {
+      "id": "sgstylesnap",
+      "name": "sgstylesnap",
+      "framework": "vite",
+      "link": "https://sgstylesnap.hong-yi.me/"
+    },
+    {
+      "id": "smucourses",
+      "name": "smucourses",
+      "framework": "nextjs",
+      "link": "https://smucourses.hong-yi.me/"
+    },
+    {
+      "id": "smuseats",
+      "name": "smuseats",
+      "framework": "vite",
+      "link": "https://smuseats.hong-yi.me/"
+    },
+    {
+      "id": "spritescavenger",
+      "name": "spritescavenger",
+      "framework": "nextjs",
+      "link": "https://spritescavenger.hong-yi.me/"
+    },
+    {
+      "id": "swiperboxd",
+      "name": "swiperboxd",
+      "framework": "fastapi",
+      "link": "https://swiperboxd.hong-yi.me/"
+    },
+    {
+      "id": "theprawnfeeds",
+      "name": "theprawnfeeds",
+      "framework": "flask",
+      "link": "https://theprawnfeeds.hong-yi.me/"
+    },
+    {
+      "id": "theprawngame",
+      "name": "theprawngame",
+      "framework": "vite",
+      "link": "https://theprawngame.hong-yi.me/"
+    },
+    {
+      "id": "theprawnhome",
+      "name": "theprawnhome",
+      "framework": "vite",
+      "link": "https://theprawnhome.hong-yi.me/"
+    },
+    {
+      "id": "theprawnhunter",
+      "name": "theprawnhunter",
+      "framework": "nextjs",
+      "link": "https://theprawnhunter.hong-yi.me/"
+    },
+    {
+      "id": "theprawnprojects",
+      "name": "theprawnprojects",
+      "framework": "vite",
+      "link": "https://theprawnprojects.hong-yi.me/"
+    },
+    {
+      "id": "theprawnredirects",
+      "name": "theprawnredirects",
+      "framework": null,
+      "link": "https://theprawnredirects.hong-yi.me/"
+    },
+    {
+      "id": "theprawnsplit",
+      "name": "theprawnsplit",
+      "framework": "vite",
+      "link": "https://theprawnsplit.hong-yi.me/"
+    },
+    {
+      "id": "theprawnstatus",
+      "name": "theprawnstatus",
+      "framework": "vite",
+      "link": "https://theprawnstatus.vercel.app/"
+    },
+    {
+      "id": "theprawnsurprise",
+      "name": "theprawnsurprise",
+      "framework": "vite",
+      "link": "https://theprawnsurprise.hong-yi.me/"
+    },
+    {
+      "id": "ticketremaster",
+      "name": "ticketremaster",
+      "framework": "vite",
+      "link": "https://ticketremaster.hong-yi.me/"
+    },
+    {
+      "id": "validatenric",
+      "name": "validatenric",
+      "framework": "flask",
+      "link": "https://validatenric.hong-yi.me/"
+    }
+  ]
+}

@@ -1,68 +1,60 @@
 # The Prawn Projects
 
-A self-updating Neobrutalist portfolio that automatically syncs with your Vercel deployments.
+A public directory of the Prawn websites, with Space Grotesk, black and white cards, 3px borders and offset shadows.
 
-## Description
+## How it works
 
-The Prawn Projects is a high-contrast portfolio application styled in a raw Neobrutalist aesthetic. It connects directly to the Vercel REST API to automatically fetch and display your live deployments, keeping your portfolio perfectly synchronized with your development work. The design features bold typography, stark black/white contrast, and responsive layouts that scale from mobile to desktop.
+The reviewed public catalog in `data/projects.json` ships with the application. Visitors load static assets; there is no account API request, server function or periodic polling for the catalog. Tailwind is compiled during the build, preserving the original visual theme.
 
-## Features
+The catalog includes every deployed project with a verified public homepage from the current hosting inventory. Undeployed projects are excluded. Entries contain only a public slug, name, framework and homepage URL. A date on the page shows when the catalog was updated.
 
-- Automatic project synchronization with Vercel API
-- Neobrutalist design with bold typography (Space Grotesk) and high-contrast visuals
-- Responsive grid layout that adapts from mobile to large desktop screens
-- Real-time loading states with skeleton animations
-- Framework detection and display for each project
-- Direct links to live deployed projects
+## Development
 
-## Technologies Used
-
-- React 19
-- TypeScript
-- Vite (build tool)
-- Tailwind CSS
-- Vercel API integration
-
-## Installation
+Use Node.js 24 and run:
 
 ```bash
-# Clone the repository
-git clone https://github.com/hongyime/prawnprojects.git
-
-# Navigate to project directory
-cd prawnprojects
-
-# Install dependencies
-npm install
-```
-
-## Usage
-
-```bash
-# Start development server
+npm ci
 npm run dev
-
-# Build for production
+npm test
 npm run build
-
-# Preview production build
 npm run preview
 ```
 
-### Configuration
+The build validates the catalog, runs TypeScript, compiles the application and checks the output for account API/credential markers and runtime CSS compilers. The public catalog workflow also builds with synthetic credential markers to detect accidental exposure.
 
-To enable automatic project fetching, configure the following environment variables in your deployment settings:
+## Updating the catalog
 
-| Variable Name | Description |
-| :--- | :--- |
-| `VITE_VERCEL_API_TOKEN` | Your Vercel Account API Token. Generate this in your Vercel Account Settings. |
-| `VITE_TEAM_ID` | (Optional) The Team ID if your projects are hosted under a Vercel Team. |
+Update the catalog when a project or public domain is added, renamed or removed. Ordinary deployments at the same URL need no catalog update. Existing entries remain available until the next catalog release; the website deliberately does not poll the hosting account.
 
-The application also supports `REACT_APP_VERCEL_API_TOKEN` (Create React App), `NEXT_PUBLIC_VERCEL_API_TOKEN` (Next.js), or unprefixed `VERCEL_API_TOKEN` variables.
+Either edit `data/projects.json` and run `npm run catalog:check`, or use a complete export from the authenticated Vercel connector:
 
-## Demo
+```json
+{
+  "checkedAt": "2026-09-10T00:00:00Z",
+  "projects": [
+    {
+      "name": "example",
+      "framework": "vite",
+      "ready": "READY",
+      "domains": ["example.hong-yi.me", "example.vercel.app"]
+    }
+  ]
+}
+```
 
-Deploy to Vercel or any hosting provider that supports Vite applications. Ensure environment variables are configured in your deployment dashboard.
+```bash
+npm run catalog:update -- path/to/project-export.json
+npm test
+npm run build
+```
+
+Use the complete project inventory, including subsequent pages if exporting through a paginated API. The generator projects only public fields, skips undeployed projects and avoids team/branch aliases. Review the generated diff and check each public link before committing. Do not commit a raw account response or credentials. Push the reviewed catalog with the site; Vercel's Git integration builds and publishes it.
+
+## Deployment
+
+Use the Vite framework preset, `npm run build`, and output directory `dist`. No API keys or account tokens are needed in development, CI or production. Do not configure tokens with browser-visible prefixes such as `VITE_` or `NEXT_PUBLIC_`.
+
+The previous browser account-API integration has been removed. Any credential previously embedded in its public builds must be revoked through Vercel account settings; publishing this replacement cannot invalidate old bundles or their credentials. Check other consumers before revoking a reused token.
 
 ## Disclaimer
 

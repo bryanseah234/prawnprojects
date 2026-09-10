@@ -8,7 +8,7 @@ interface NeoCardProps {
 
 export const NeoCard: React.FC<NeoCardProps> = ({ title, children, className = '' }) => {
   return (
-    <div className={`
+    <article aria-label={title} className={`
       border-3 border-neo-black bg-neo-white 
       p-6 shadow-neo transition-all duration-200 
       hover:shadow-neo-hover hover:translate-x-[3px] hover:translate-y-[4px]
@@ -21,7 +21,7 @@ export const NeoCard: React.FC<NeoCardProps> = ({ title, children, className = '
       <div className="flex-grow">
         {children}
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -67,3 +67,8 @@ export const NeoLink: React.FC<NeoLinkProps> = ({ children, className = '', ...p
     </a>
   );
 };
+export const NeoProjectLink: React.FC<NeoLinkProps> = ({ children, className = '', ...props }) => (
+  <a className={`px-6 py-3 font-bold uppercase tracking-wider border-3 border-neo-black bg-neo-white shadow-neo active:shadow-none active:translate-x-[5px] active:translate-y-[8px] transition-all duration-100 hover:bg-neo-grey ${className}`} {...props}>
+    {children}
+  </a>
+);
